@@ -18,10 +18,10 @@
             android:id="@+id/ivSaveIcon"
             android:layout_width="25dp"
             android:layout_height="25dp"
+            android:layout_marginEnd="8dp"
             android:background="@drawable/ic_save"
-            android:layout_marginTop="30dp"
-            app:layout_constraintStart_toStartOf="@+id/tvDate"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/tvSavedCities"
+            app:layout_constraintTop_toTopOf="@id/tvSavedCities"
             tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
 
@@ -29,12 +29,39 @@
             android:id="@+id/tvSavedCities"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="16dp"
             android:text="Saved Cities"
             android:textColor="@color/white"
-            android:layout_marginLeft="8dp"
             android:textSize="21sp"
-            app:layout_constraintStart_toEndOf="@+id/ivSaveIcon"
-            app:layout_constraintTop_toTopOf="@id/ivSaveIcon" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnBack"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:background="@android:color/transparent"
+            android:text="Back"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            app:layout_constraintStart_toEndOf="@id/ivBack"
+            app:layout_constraintTop_toTopOf="@+id/ivBack"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <ImageView
+            android:id="@+id/ivBack"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/arrow_back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+
 
 
         <TextView

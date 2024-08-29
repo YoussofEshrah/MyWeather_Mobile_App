@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.pack.myweather.R
 import com.pack.myweather.adapters.SavedCitiesAdapter
 import com.pack.myweather.databinding.FragmentSavedCitiesBinding
 import com.pack.myweather.ui.SearchCityBottomSheet
@@ -37,6 +38,14 @@ class SavedCitiesFragment : Fragment(), SearchCityBottomSheet.OnCitySelectedList
             val searchCityBottomSheet = SearchCityBottomSheet()
             searchCityBottomSheet.setOnCitySelectedListener(this)
             searchCityBottomSheet.show(parentFragmentManager, searchCityBottomSheet.tag)
+        }
+
+        binding.btnBack.setOnClickListener {
+            val homeFragment = HomeFragment()
+            requireActivity().supportFragmentManager.beginTransaction()
+                .replace(R.id.flFragment, homeFragment)
+                .addToBackStack(null)
+                .commit()
         }
 
         viewModel.getAllSavedForecasts().observe(viewLifecycleOwner) { forecasts ->
